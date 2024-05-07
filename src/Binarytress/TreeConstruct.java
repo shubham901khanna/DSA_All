@@ -1,4 +1,4 @@
-package Trees;
+package Binarytress;
 
 public class TreeConstruct {
 }
