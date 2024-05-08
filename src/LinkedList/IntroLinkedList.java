@@ -45,19 +45,34 @@ public class IntroLinkedList {
         return cnt;
     }
 
+    private static void print(Node head) {
+        while(head != null) {
+            System.out.println(head.data + "");
+            head = head.next;
+        }
+        System.out.println();
+    }
+
+    private static Node deleteNodeFromHead(Node head) {
+        if (head == null) return head;
+        head = head.next;
+        return head;
+    }
 
     public static void main(String[] args) {
         int[] arr = {4, 2, 5, 1};
         Node head = convertToArray(arr);
-        System.out.println(lengthofLL(head));
-        System.out.println(head.data);
+        //  System.out.println(lengthofLL(head));
+        //  System.out.println(head.data);
         // Traversal
         Node temp = head;
         while (temp != null) {
-            System.out.println(temp.data);
+            //  System.out.println(temp.data);
             temp = temp.next;
         }
+        // delete a node of LL from head
+        head = deleteNodeFromHead(head);
+        print(head);
+
     }
-
-
 }
