@@ -59,6 +59,17 @@ public class IntroLinkedList {
         return head;
     }
 
+    private static Node deleteNodeFromTail(Node head) {
+        if(head == null || head.next == null) return null;
+        Node temp = head;
+        while (temp.next.next != null) {
+            temp = temp.next;
+        }
+        temp.next = null;
+        return head;
+
+    }
+
     public static void main(String[] args) {
         int[] arr = {4, 2, 5, 1};
         Node head = convertToArray(arr);
@@ -71,8 +82,9 @@ public class IntroLinkedList {
             temp = temp.next;
         }
         // delete a node of LL from head
-        head = deleteNodeFromHead(head);
+        //  head = deleteNodeFromHead(head);
+        // delete a node of LL from tail
+        head = deleteNodeFromTail(head);
         print(head);
-
     }
 }
