@@ -70,6 +70,86 @@ public class IntroLinkedList {
 
     }
 
+    private static Node deleteNodeFromk(Node head, int k) {
+        if (head == null) return head;
+        if (k == 1) {
+            return head;
+        }
+        int ct = 0;
+        Node temp = head;
+        Node prev = null;
+        while (temp != null) {
+            ct++;
+            if (ct == k) {
+                prev.next = prev.next.next;
+                break;
+            }
+            prev = temp;
+            temp = temp.next;
+        }
+        return head;
+    }
+
+    private static Node deleteNodeVal(Node head, int val) {
+        if (head == null) return head;
+        if (head.data == 1) {
+            return head;
+        }
+        Node temp = head;
+        Node prev = null;
+        while (temp != null) {
+            if (temp.data == val) {
+                prev.next = prev.next.next;
+                break;
+            }
+            prev = temp;
+            temp = temp.next;
+        }
+        return head;
+    }
+
+    private static Node insertHead(Node head, int val) {
+        return new Node(val,head);
+    }
+
+    private static Node insertTail(Node head, int i) {
+        if(head == null) {
+            return new Node(i);
+        }
+        Node temp = head;
+        while(temp.next != null) {
+            temp = temp.next;
+        }
+        Node newNode = new Node(i);
+        temp.next = newNode;
+        return head;
+    }
+
+    private static Node insertPosition(Node head, int el, int k) {
+        if(head == null) {
+            if (k ==1) {
+                return new Node(el);
+            } else {
+                return head;
+            }
+        }
+        if(k == 1) {
+            return new Node(el, head);
+        }
+        int ct = 0;
+        Node temp = head;
+        while (temp != null) {
+            ct++;
+            if(ct == k-1) {
+                Node newNode = new Node(el,temp.next);
+                temp.next = newNode;
+                break;
+            }
+            temp = temp.next;
+        }
+        return head;
+    }
+
     public static void main(String[] args) {
         int[] arr = {4, 2, 5, 1};
         Node head = convertToArray(arr);
@@ -84,7 +164,17 @@ public class IntroLinkedList {
         // delete a node of LL from head
         //  head = deleteNodeFromHead(head);
         // delete a node of LL from tail
-        head = deleteNodeFromTail(head);
+       // head = deleteNodeFromTail(head);
+        // delete a node of LL based on K
+        // deleteNodeFromk(head,5);
+       // deleteNodeVal(head, 1);
+       //  head = insertHead(head, 100);
+      //  head = insertTail(head, 100);
+        head = insertPosition(head, 100, 1);
         print(head);
     }
+
+
+
+
 }
