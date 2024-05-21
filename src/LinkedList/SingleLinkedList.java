@@ -1,3 +1,4 @@
+/*
 package LinkedList;
 
 
@@ -19,9 +20,12 @@ class Node {
         this.data = data;
         this.next = next;
     }
+
+    public Node(int i, Object o, Node prev) {
+    }
 };
 
-public class IntroLinkedList {
+ class IntroLinkedList {
 
     private static Node convertToArray(int[] arr) {
         Node head = new Node(arr[0]);
@@ -161,11 +165,11 @@ public class IntroLinkedList {
             //  System.out.println(temp.data);
             temp = temp.next;
         }
-        // delete a node of LL from head
+        // delete a Node of LL from head
         //  head = deleteNodeFromHead(head);
-        // delete a node of LL from tail
+        // delete a Node of LL from tail
        // head = deleteNodeFromTail(head);
-        // delete a node of LL based on K
+        // delete a Node of LL based on K
         // deleteNodeFromk(head,5);
        // deleteNodeVal(head, 1);
        //  head = insertHead(head, 100);
@@ -178,3 +182,4 @@ public class IntroLinkedList {
 
 
 }
+*/
