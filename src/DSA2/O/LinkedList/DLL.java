@@ -1,4 +1,4 @@
-package LinkedList;
+package DSA2.O.LinkedList;
 
 class Node {
      int data;
